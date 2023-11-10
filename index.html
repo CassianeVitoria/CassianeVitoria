@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto web</title>
-    <link rel="stylesheet" href="style.css"
+    <title>Soma de Campos de Texto</title>
 </head>
 <body>
-<header>
-<img src="https://www.portaldosanimais.com.br/wp-content/uploads/2017/02/Panda-Vermelho-e1516040786209.jpg"
-<h1> PANDA VERMELHO</h1>
-</header>
+    <h1>Calculadora de Soma</h1>
+
+    <form id="somaForm">
+        <label for="campo1">Campo 1:</label>
+        <input type="text" id="campo1" name="campo1"><br>
+
+        <label for="campo2">Campo 2:</label>
+        <input type="text" id="campo2" name="campo2"><br>
+
+        <button type="button" onclick="calcularSoma()">Calcular Soma</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSoma() {
+            var campo1 = parseFloat(document.getElementById("campo1").value);
+            var campo2 = parseFloat(document.getElementById("campo2").value);
+            var resultado = campo1 + campo2;
+            document.getElementById("resultado").textContent = "A soma é: " + resultado;
+        }
+    </script>
 </body>
 </html>
